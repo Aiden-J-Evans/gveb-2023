@@ -438,36 +438,39 @@ class Dataset:
         
     @staticmethod
     def _fix_conversion(conversions: ConversionMap) -> tuple[dict[str, Callable[[Row, int], Any]], list[str]]:
-        """Modify a ConversionMap to only used IndexedConversionFunctions   
+        """Modify a ConversionMap to only use IndexedConversionFunctions   
 
         Args:
             conversions (ConversionMap): The conversion map to fix
 
         Returns:
-            dict[str, IndexedConversionFunction]: The fixed conversion map
+            tuple: 
+                dict[str, Callable[[Row, int], Any]]: The fixed conversion map
+                list[str]: The required fieldnames
         """
         
         result = {}
         required_fieldnames = []
-        for key in conversions:
-            # The conversion is (function, key_in)
-            if type(conversions[key]) == tuple:
-                func = conversions[key][0]                                                  # type: ignore
-                fieldname = conversions[key][1]                                             # type: ignore
+        
+        for key, conv in conversions.items():
+            if isinstance(conv, tuple):
+                func, fieldname = conv  # Unpack the tuple (function, key_in)
                 required_fieldnames.append(fieldname)
-                
-                # Have to use instantly called lambda expression wrapper to avoid late binding
+                # Wrap func so it uses row[fieldname], avoiding late binding issues
                 result[key] = (lambda func, fn: 
-                    lambda row, index: func(row[fn]))(func, fieldname)
-            # The conversion is RowFunction(function)
-            elif type(conversions[key]) == RowFunction:
-                # Have to use instantly called lambda expression wrapper to avoid late binding
-                result[key] = (lambda rowf: rowf.f)(conversions[key])                       # type: ignore
-            # The conversion is function
+                    lambda row, index: func(row[fn]) if fn in row else None
+                )(func, fieldname)
+            
+            elif isinstance(conv, RowFunction):
+                # Assuming RowFunction has attribute 'f' that is the function
+                result[key] = conv.f  # type: ignore
+            
             else:
+                # conv is a direct function; key is the fieldname to use
                 required_fieldnames.append(key)
-                # Have to use instantly called lambda expression wrapper to avoid late binding
-                result[key] = (lambda key: 
-                    lambda row, index: conversions[key](row[key])                           # type: ignore
-                )(key)    
+                # Wrap conv to use row[key], with a check for existence
+                result[key] = (lambda func, fn: 
+                    lambda row, index: func(row[fn]) if fn in row else None
+                )(conv, key)
+        
         return result, required_fieldnames

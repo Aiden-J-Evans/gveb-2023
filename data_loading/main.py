@@ -1,5 +1,6 @@
 import sys
 sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
+import os
 
 import utm
 from neo4j import GraphDatabase
@@ -19,9 +20,9 @@ from data_wrangler.conversion_functions import split_latitude, split_longitude
 
 
 # Change this to point to the directory of your database information
-DATABASE_INFO_FILEPATH = r"../../dbinfo.txt"
+DATABASE_INFO_FILEPATH = r"dbinfo.txt"
 
-INPUT_FOLDER = '../data/cleaned_data'
+INPUT_FOLDER = 'data/cleaned_data'
 
 JUNCTION_FILE = f'{INPUT_FOLDER}/reach_junctions.csv'
 SEGMENT_FILE = f'{INPUT_FOLDER}/segments.csv'
@@ -31,7 +32,7 @@ RAPID_TRANSIT_FILE = f'{INPUT_FOLDER}/rapid_transit.csv'
 COMMERCIAL_FILE = f'{INPUT_FOLDER}/stores.csv'
 SCHOOL_FILE = f'{INPUT_FOLDER}/schools.csv'
 BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
-TREES_FILE = f'../data/original_data/street-trees.csv'
+TREES_FILE = f'{INPUT_FOLDER}/street-trees.csv'
 GRAFFITI_FILE = f'{INPUT_FOLDER}/graffiti.csv'
 OBSERVATIONS_FILE = f'{INPUT_FOLDER}/observations.csv'
 
@@ -465,7 +466,7 @@ def load_observations():
     print("Loaded Observations")
     
     return observation_data, observations
->>>>>>> a639093edc6b82752cd146b677ede17e50d874cc
+#>>>>>>> a639093edc6b82752cd146b677ede17e50d874cc
 
 def load_businesses():
     print("Loading Businesses")
@@ -620,7 +621,7 @@ def load_data(session):
     rtransit_data, rtransit = load_rapid_transit()
     schools_data, schools = load_schools()
     businesses_data, businesses = load_businesses()
-    trees_data, trees = load_trees()
+    #trees_data, trees = load_trees()
     graffiti_data, graffiti = load_graffiti()
     observation_data, observations = load_observations()
     
@@ -632,7 +633,7 @@ def load_data(session):
         rtransit,
         schools,
         businesses,
-        trees
+        #trees,
         graffiti,
         observations
     ]

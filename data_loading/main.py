@@ -1,6 +1,10 @@
 import sys
-sys.path.append('../') # This should probably be changed to a more sofisticated system at some point. i.e. install the package
 import os
+import json
+from collections import defaultdict
+import math
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import utm
 from neo4j import GraphDatabase
@@ -35,6 +39,7 @@ BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
 TREES_FILE = f'{INPUT_FOLDER}/street-trees.csv'
 GRAFFITI_FILE = f'{INPUT_FOLDER}/graffiti.csv'
 OBSERVATIONS_FILE = f'{INPUT_FOLDER}/observations.csv'
+RAPID_TRANSIT_LINES_DIR = f'{INPUT_FOLDER}/rapid-transit-lines'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -466,7 +471,6 @@ def load_observations():
     print("Loaded Observations")
     
     return observation_data, observations
-#>>>>>>> a639093edc6b82752cd146b677ede17e50d874cc
 
 def load_businesses():
     print("Loading Businesses")
@@ -510,9 +514,104 @@ def load_businesses():
         ]
     )
     
-    print("Loaded Schools")
+    print("Loaded Businesses")
     
     return businesses_data, businesses
+
+def load_rapid_transit_lines(session):
+    print("loading rapid transit lines")
+
+    def normalize_line_name(raw_name):
+        return raw_name.strip().lower()
+
+    def title_case_name(raw_name):
+        return normalize_line_name(raw_name).title()
+
+    def upload_line(tx, raw_name, coordinates):
+        norm_name = normalize_line_name(raw_name)
+        line_name = title_case_name(norm_name)
+
+        tx.run("MERGE (l:TransitLine {name: $line_name})", line_name=line_name)
+
+        for coord in coordinates:
+            lon, lat = coord
+            tx.run("""
+                MATCH (l:TransitLine {name: $line_name})
+                CREATE (p:GeoPoint {latitude: $lat, longitude: $lon})
+                CREATE (l)-[:HAS_POINT]->(p)
+            """, line_name=line_name, lat=lat, lon=lon)
+        print(f"{line_name} uploaded")
+
+    line_segments = defaultdict(list)
+
+    # Group all segments from all files
+    for filename in os.listdir(RAPID_TRANSIT_LINES_DIR):
+        file_path = os.path.join(RAPID_TRANSIT_LINES_DIR, filename)
+        with open(file_path, "r") as f:
+            data = json.load(f)
+
+        if isinstance(data, dict) and data.get("type") == "FeatureCollection":
+            for feature in data.get("features", []):
+                raw_name = feature.get("properties", {}).get("NAME", "Unnamed Line")
+                coords = feature.get("geometry", {}).get("coordinates", [])
+                line_segments[normalize_line_name(raw_name)].append(coords)
+
+        elif isinstance(data, list):
+            for entry in data:
+                raw_name = entry["line"]
+                coords = entry["geom"]["geometry"]["coordinates"]
+                line_segments[normalize_line_name(raw_name)].append(coords)
+
+        else:
+            print(f"Unknown format in {filename}, skipping...")
+
+    # Merge and upload once per line
+    for norm_name, segments in line_segments.items():
+        full_coords = merge_segments(segments)
+        line_name = title_case_name(norm_name)
+        session.write_transaction(upload_line, line_name, full_coords)
+
+
+    print("finished loading rapid transit lines")
+
+
+
+def distance(p1, p2):
+    return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
+
+def merge_segments(segments):
+    """Greedily merges a list of coordinate lists into one continuous list. This still needs work. Currently trying to get it to work for the burnaby line data"""
+    if not segments:
+        return []
+
+    merged = segments.pop(0)
+
+    while segments:
+        best_idx = -1
+        best_reverse = False
+        best_dist = float('inf')
+
+        for i, s in enumerate(segments):
+            d1 = distance(merged[-1], s[0])
+            d2 = distance(merged[-1], s[-1])
+            if d1 < best_dist:
+                best_idx = i
+                best_dist = d1
+                best_reverse = False
+            if d2 < best_dist:
+                best_idx = i
+                best_dist = d2
+                best_reverse = True
+
+        chosen = segments.pop(best_idx)
+        if best_reverse:
+            chosen.reverse()
+        if distance(merged[-1], chosen[0]) < 1e-6:
+            merged.extend(chosen[1:])
+        else:
+            merged.extend(chosen)
+
+    return merged
 
 def create_relationships(junctions, segments, transit, crimes, stores, rtransit, schools, businesses, graffiti, observations):
     def junction_prop_matcher(j1, j2):
@@ -607,7 +706,7 @@ def create_relationships(junctions, segments, transit, crimes, stores, rtransit,
     
     return relationships
 
-def load_data(session):
+def load_data(session, upload_relationships = False):
     
     # This makes it easer to only load some of the data without having to modify too much code
     junctions = transit = crimes = stores = rtransit = schools = businesses = None
@@ -625,6 +724,8 @@ def load_data(session):
     graffiti_data, graffiti = load_graffiti()
     observation_data, observations = load_observations()
     
+    
+    
     categories = [
         junctions,
         transit,
@@ -637,15 +738,11 @@ def load_data(session):
         graffiti,
         observations
     ]
-    
-    relationships = create_relationships(
-        junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses, graffiti, observations
-    )
-    
+             
     print("Writing Data")
     writer = GraphWriter(session)
     writer.clear_all()
-    
+    load_rapid_transit_lines(session)
     print()
     print("-- Writing Categories --")
     for category in categories:
@@ -653,10 +750,14 @@ def load_data(session):
         writer.write_category(category)
         print(f"Wrote {category.name}")
     
-    print()
-    print("-- Writing Relationships --")
-    for relation in relationships:
-        writer.write_relation(relation)
+    if upload_relationships:
+        print()
+        print("-- Writing Relationships --")
+        relationships = create_relationships(
+            junctions, segment_data, transit, crimes, stores, rtransit, schools, businesses, graffiti, observations
+        )
+        for relation in relationships:
+            writer.write_relation(relation)
     
     print()
     print("Writing Data Completed")

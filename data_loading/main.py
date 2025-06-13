@@ -39,7 +39,7 @@ BUSINESSES_FILE = f'{INPUT_FOLDER}/businesses.csv'
 TREES_FILE = f'{INPUT_FOLDER}/street-trees.csv'
 GRAFFITI_FILE = f'{INPUT_FOLDER}/graffiti.csv'
 OBSERVATIONS_FILE = f'{INPUT_FOLDER}/observations.csv'
-RAPID_TRANSIT_LINES_DIR = f'{INPUT_FOLDER}/rapid-transit-lines'
+RAPID_TRANSIT_LINES = f'{INPUT_FOLDER}/rapid_transit_lines.csv'
 
 ZONE_NUMBER = 10
 ZONE_LETTER = 'U'
@@ -317,13 +317,13 @@ def load_rapid_transit():
     rtransit_data = Dataset.load_file(
         RAPID_TRANSIT_FILE,
         {
-            'id': int,
+            #'id': int,
             'name': str,
-            'area': str,
+            'line_name': str,
             'latitude': float,
             'longitude': float,
-            'junction_id': int,
-            'junction_dst': float
+            #'junction_id': int,
+            #'junction_dst': float
         }
     )
     
@@ -331,9 +331,9 @@ def load_rapid_transit():
         "RapidTransit",
         rtransit_data,
         [
-            'id',
             'name',
-            'area',
+            'line_name',
+            #'area',
             'latitude',
             'longitude'
         ]
@@ -519,6 +519,7 @@ def load_businesses():
     return businesses_data, businesses
 
 def load_rapid_transit_lines(session):
+    import csv
     print("loading rapid transit lines")
 
     def normalize_line_name(raw_name):
@@ -531,50 +532,33 @@ def load_rapid_transit_lines(session):
         norm_name = normalize_line_name(raw_name)
         line_name = title_case_name(norm_name)
 
-        tx.run("MERGE (l:TransitLine {name: $line_name})", line_name=line_name)
+        tx.run("MERGE (l:RapidTransitLine {name: $line_name})", line_name=line_name)
 
-        for coord in coordinates:
-            lon, lat = coord
+        for i, (lon, lat) in enumerate(coordinates):
             tx.run("""
-                MATCH (l:TransitLine {name: $line_name})
-                CREATE (p:GeoPoint {latitude: $lat, longitude: $lon})
+                MATCH (l:RapidTransitLine {name: $line_name})
+                CREATE (p:GeoPoint {latitude: $lat, longitude: $lon, idx: $idx})
                 CREATE (l)-[:HAS_POINT]->(p)
-            """, line_name=line_name, lat=lat, lon=lon)
+            """, line_name=line_name, lat=lat, lon=lon, idx=i)
+
+
         print(f"{line_name} uploaded")
 
     line_segments = defaultdict(list)
 
-    # Group all segments from all files
-    for filename in os.listdir(RAPID_TRANSIT_LINES_DIR):
-        file_path = os.path.join(RAPID_TRANSIT_LINES_DIR, filename)
-        with open(file_path, "r") as f:
-            data = json.load(f)
+    with open(RAPID_TRANSIT_LINES, newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            raw_name = row['line_name']
+            lon = float(row['longitude'])
+            lat = float(row['latitude'])
+            line_segments[normalize_line_name(raw_name)].append((lon, lat))
 
-        if isinstance(data, dict) and data.get("type") == "FeatureCollection":
-            for feature in data.get("features", []):
-                raw_name = feature.get("properties", {}).get("NAME", "Unnamed Line")
-                coords = feature.get("geometry", {}).get("coordinates", [])
-                line_segments[normalize_line_name(raw_name)].append(coords)
-
-        elif isinstance(data, list):
-            for entry in data:
-                raw_name = entry["line"]
-                coords = entry["geom"]["geometry"]["coordinates"]
-                line_segments[normalize_line_name(raw_name)].append(coords)
-
-        else:
-            print(f"Unknown format in {filename}, skipping...")
-
-    # Merge and upload once per line
-    for norm_name, segments in line_segments.items():
-        full_coords = merge_segments(segments)
+    for norm_name, coords in line_segments.items():
         line_name = title_case_name(norm_name)
-        session.write_transaction(upload_line, line_name, full_coords)
-
+        session.write_transaction(upload_line, line_name, coords)
 
     print("finished loading rapid transit lines")
-
-
 
 def distance(p1, p2):
     return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)

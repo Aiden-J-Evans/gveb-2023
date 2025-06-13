@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "SkyTrain_Station",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 1, "NAME": "LAKE CITY WAY STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.939039410951025, 49.254617629183628 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "NAME": "METROTOWN STATION" }, "geometry": { "type": "Point", "coordinates": [ -123.003807412765383, 49.225768619632198 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 3, "NAME": "BRENTWOOD TOWN CENTRE STATION" }, "geometry": { "type": "Point", "coordinates": [ -123.00166442348052, 49.266383622361879 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 4, "NAME": "PRODUCTION WAY - UNIVERSITY STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.918205407133001, 49.253413631174894 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 5, "NAME": "ROYAL OAK STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.98842839799515, 49.220062617326249 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 6, "NAME": "SPERLING - BURNABY LAKE STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.963858414695721, 49.259162626230413 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 7, "NAME": "PATTERSON STATION" }, "geometry": { "type": "Point", "coordinates": [ -123.012444414429837, 49.229675618977552 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 8, "NAME": "GILMORE STATION" }, "geometry": { "type": "Point", "coordinates": [ -123.013507424839062, 49.264955620566653 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 9, "NAME": "LOUGHEED TOWN CENTRE STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.896885402054949, 49.248547632945346 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 10, "NAME": "HOLDOM STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.982137419275787, 49.264728624047592 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 11, "NAME": "EDMONDS STATION" }, "geometry": { "type": "Point", "coordinates": [ -122.959192378088431, 49.212063621898359 ] } }
+]
+}

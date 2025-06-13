@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Copy of SkyTrain Network Map</name>
+    <description>This map displays all SkyTrain lines and stations in our network.</description>
+    <Style id="icon-1716-0097A7-normal">
+      <IconStyle>
+        <color>ffa79700</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1716-0097A7-highlight">
+      <IconStyle>
+        <color>ffa79700</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1716-0097A7">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1716-0097A7-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1716-0097A7-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1716-01579B-normal">
+      <IconStyle>
+        <color>ff9b5701</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1716-01579B-highlight">
+      <IconStyle>
+        <color>ff9b5701</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1716-01579B">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1716-01579B-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1716-01579B-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-1716-FBC02D-normal">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1716-FBC02D-highlight">
+      <IconStyle>
+        <color>ff2dc0fb</color>
+        <scale>1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1716-FBC02D">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1716-FBC02D-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1716-FBC02D-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-00A2CE-3000-nodesc-normal">
+      <LineStyle>
+        <color>ffcea200</color>
+        <width>3</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-00A2CE-3000-nodesc-highlight">
+      <LineStyle>
+        <color>ffcea200</color>
+        <width>4.5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-00A2CE-3000-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-00A2CE-3000-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-00A2CE-3000-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-1B62A6-3000-nodesc-normal">
+      <LineStyle>
+        <color>ffa6621b</color>
+        <width>3</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-1B62A6-3000-nodesc-highlight">
+      <LineStyle>
+        <color>ffa6621b</color>
+        <width>4.5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-1B62A6-3000-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-1B62A6-3000-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-1B62A6-3000-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFD600-3000-nodesc-normal">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>3</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="line-FFD600-3000-nodesc-highlight">
+      <LineStyle>
+        <color>ff00d6ff</color>
+        <width>4.5</width>
+      </LineStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="line-FFD600-3000-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFD600-3000-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFD600-3000-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Canada Line</name>
+      <Placemark>
+        <name>Canada Line</name>
+        <styleUrl>#line-00A2CE-3000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -123.112012,49.285847,0
+            -123.118756,49.282578,0
+            -123.120304,49.281618,0
+            -123.121226,49.280607,0
+            -123.121518,49.279375,0
+            -123.121979,49.277714,0
+            -123.121998,49.276371,0
+            -123.121615,49.273073,0
+            -123.119891,49.270468,0
+            -123.117582,49.268632,0
+            -123.115619,49.266543,0
+            -123.114476,49.263188,0
+            -123.115106,49.255138,0
+            -123.115345,49.24914,0
+            -123.115361,49.247191,0
+            -123.115466,49.245565,0
+            -123.115698,49.244919,0
+            -123.116594,49.244062,0
+            -123.11663,49.244062,0
+            -123.117726,49.243371,0
+            -123.118444,49.242131,0
+            -123.118483,49.24084,0
+            -123.11751,49.239543,0
+            -123.116599,49.238561,0
+            -123.116596,49.238538,0
+            -123.11598,49.237876,0
+            -123.116,49.23702,0
+            -123.116276,49.231027,0
+            -123.116631,49.220826,0
+            -123.11694,49.209744,0
+            -123.117971,49.20017,0
+            -123.118175,49.199833,0
+            -123.118501,49.199475,0
+            -123.119612,49.198501,0
+            -123.121333,49.19758,0
+            -123.122942,49.196971,0
+            -123.124698,49.196269,0
+            -123.12601,49.195642,0
+            -123.126968,49.195109,0
+            -123.128334,49.194633,0
+            -123.129057,49.194451,0
+            -123.129965,49.194399,0
+            -123.130517,49.194497,0
+            -123.131256,49.19469,0
+            -123.131861,49.194959,0
+            -123.132509,49.195255,0
+            -123.133261,49.195477,0
+            -123.134529,49.195733,0
+            -123.136872,49.19593,0
+            -123.140631,49.196389,0
+            -123.14253,49.19663,0
+            -123.143427,49.196654,0
+            -123.144657,49.196798,0
+            -123.145729,49.196728,0
+            -123.146861,49.196628,0
+            -123.148252,49.196314,0
+            -123.149005,49.196053,0
+            -123.14977,49.195651,0
+            -123.150618,49.195179,0
+            -123.151807,49.194458,0
+            -123.15304,49.193885,0
+            -123.154451,49.193281,0
+            -123.155811,49.193163,0
+            -123.157385,49.193092,0
+            -123.159556,49.193022,0
+            -123.16264,49.193021,0
+            -123.162746,49.193022,0
+            -123.16458,49.193089,0
+            -123.166661,49.193075,0
+            -123.166731,49.193096,0
+            -123.169159,49.193328,0
+            -123.170637,49.193461,0
+            -123.172474,49.193624,0
+            -123.1733,49.193649,0
+            -123.174413,49.193763,0
+            -123.178284,49.194261,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Canada Line</name>
+        <styleUrl>#line-00A2CE-3000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -123.136216,49.168157,0
+            -123.1365,49.17589,0
+            -123.136424,49.184293,0
+            -123.136361,49.184749,0
+            -123.135961,49.185288,0
+            -123.13482,49.186285,0
+            -123.132741,49.18857,0
+            -123.130569,49.190445,0
+            -123.130286,49.19088,0
+            -123.13009,49.191351,0
+            -123.13008,49.191854,0
+            -123.130069,49.192365,0
+            -123.130015,49.192959,0
+            -123.129965,49.193275,0
+            -123.129701,49.193683,0
+            -123.129306,49.19404,0
+            -123.12891,49.194312,0
+            -123.128174,49.194635,0
+            -123.127724,49.194843,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Canada Line Stations</name>
+      <Placemark>
+        <name>Waterfront Station</name>
+        <description>Canada Line, Expo Line, SeaBus and West Coast Express</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.1119479,49.2858835,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Vancouver City Centre Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.118727,49.282416,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Broadway–City Hall Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.114464,49.262901,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Yaletown–Roundhouse Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.121785,49.274474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>King Edward Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.115804,49.249259,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Oakridge–41st Ave Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.116668,49.23319,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Langara–49th Ave Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.116156,49.22632,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Marine Drive Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.117032,49.209626,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Bridgeport Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.126081,49.195584,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Aberdeen Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.136359,49.18397,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sea Island Centre Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.158046,49.193079,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>YVR–Airport Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.178446,49.194256,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lansdowne Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.136514,49.17474,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Richmond–Brighouse Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.136282,49.168136,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Olympic Village Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.115655,49.266529,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Templeton Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.146469,49.19666,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Capstan Station</name>
+        <description>Canada Line</description>
+        <styleUrl>#icon-1716-0097A7</styleUrl>
+        <Point>
+          <coordinates>
+            -123.1318903,49.1891475,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Expo Line</name>
+      <Placemark>
+        <name>Expo Line</name>
+        <styleUrl>#line-1B62A6-3000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -123.111955,49.285946,0
+            -123.114723,49.28729,0
+            -123.11695,49.287858,0
+            -123.118175,49.287929,0
+            -123.119231,49.287702,0
+            -123.119938,49.287428,0
+            -123.120297,49.286687,0
+            -123.120151,49.285848,0
+            -123.118638,49.285075,0
+            -123.11715,49.284001,0
+            -123.116016,49.283398,0
+            -123.109227,49.279232,0
+            -123.107488,49.278211,0
+            -123.106119,49.2778,0
+            -123.104462,49.277622,0
+            -123.103426,49.277393,0
+            -123.1028,49.27683,0
+            -123.102454,49.274688,0
+            -123.102144,49.273664,0
+            -123.101647,49.27343,0
+            -123.101001,49.273277,0
+            -123.099646,49.273074,0
+            -123.096712,49.272383,0
+            -123.082568,49.269705,0
+            -123.081586,49.269377,0
+            -123.080712,49.268818,0
+            -123.079814,49.267842,0
+            -123.07929,49.267124,0
+            -123.078791,49.266741,0
+            -123.077944,49.266288,0
+            -123.076845,49.265894,0
+            -123.075839,49.265574,0
+            -123.070137,49.263742,0
+            -123.069599,49.263539,0
+            -123.069309,49.263191,0
+            -123.069218,49.262906,0
+            -123.069137,49.261724,0
+            -123.069149,49.259195,0
+            -123.06914,49.257056,0
+            -123.069143,49.256478,0
+            -123.069103,49.256236,0
+            -123.068942,49.25575,0
+            -123.068613,49.255096,0
+            -123.067902,49.254337,0
+            -123.066995,49.253625,0
+            -123.066124,49.252953,0
+            -123.065566,49.252557,0
+            -123.06435,49.251844,0
+            -123.062418,49.251025,0
+            -123.060177,49.250112,0
+            -123.055736,49.248273,0
+            -123.051424,49.24645,0
+            -123.046161,49.244307,0
+            -123.039518,49.241548,0
+            -123.03436,49.239431,0
+            -123.029564,49.237457,0
+            -123.025918,49.235685,0
+            -123.022563,49.234173,0
+            -123.021076,49.233588,0
+            -123.018215,49.232338,0
+            -123.014161,49.230469,0
+            -123.010238,49.228686,0
+            -123.006528,49.226987,0
+            -123.00116,49.224504,0
+            -122.996508,49.222289,0
+            -122.995607,49.221871,0
+            -122.995022,49.221622,0
+            -122.994434,49.221406,0
+            -122.993574,49.221161,0
+            -122.992643,49.220951,0
+            -122.991258,49.220655,0
+            -122.989265,49.220254,0
+            -122.984064,49.219176,0
+            -122.980559,49.21848,0
+            -122.9796,49.218265,0
+            -122.978562,49.217945,0
+            -122.977751,49.217642,0
+            -122.975913,49.216775,0
+            -122.974005,49.215861,0
+            -122.97277,49.215307,0
+            -122.97201,49.215065,0
+            -122.971369,49.214914,0
+            -122.970763,49.214825,0
+            -122.970022,49.214768,0
+            -122.967145,49.214858,0
+            -122.964627,49.214937,0
+            -122.963194,49.214976,0
+            -122.962627,49.214919,0
+            -122.961946,49.21477,0
+            -122.961389,49.214548,0
+            -122.960803,49.214152,0
+            -122.960451,49.213769,0
+            -122.959266,49.21213,0
+            -122.95709,49.20927,0
+            -122.956699,49.208786,0
+            -122.956474,49.208226,0
+            -122.956476,49.207593,0
+            -122.956646,49.207197,0
+            -122.956942,49.206763,0
+            -122.958425,49.204793,0
+            -122.958634,49.204454,0
+            -122.958719,49.204206,0
+            -122.958756,49.203897,0
+            -122.958742,49.203492,0
+            -122.958681,49.202665,0
+            -122.958529,49.202196,0
+            -122.958172,49.201624,0
+            -122.957788,49.201209,0
+            -122.957125,49.200682,0
+            -122.956469,49.200323,0
+            -122.955717,49.200016,0
+            -122.954613,49.199689,0
+            -122.953442,49.199525,0
+            -122.952001,49.199479,0
+            -122.951199,49.199555,0
+            -122.949845,49.199832,0
+            -122.947134,49.200555,0
+            -122.945551,49.200908,0
+            -122.944599,49.201011,0
+            -122.943719,49.201099,0
+            -122.942274,49.20127,0
+            -122.941663,49.201344,0
+            -122.940917,49.201597,0
+            -122.939312,49.202282,0
+            -122.938667,49.202546,0
+            -122.93537,49.203557,0
+            -122.934249,49.203791,0
+            -122.933676,49.203836,0
+            -122.932907,49.203785,0
+            -122.931845,49.203671,0
+            -122.928908,49.203345,0
+            -122.92828,49.203204,0
+            -122.927612,49.202991,0
+            -122.927162,49.20274,0
+            -122.925939,49.201859,0
+            -122.925089,49.201297,0
+            -122.924091,49.200941,0
+            -122.92307,49.200802,0
+            -122.921612,49.200549,0
+            -122.917752,49.200147,0
+            -122.916629,49.200066,0
+            -122.915893,49.200104,0
+            -122.91515,49.20023,0
+            -122.912428,49.201551,0
+            -122.910874,49.202399,0
+            -122.909094,49.203389,0
+            -122.904914,49.205442,0
+            -122.903288,49.20624,0
+            -122.902247,49.206636,0
+            -122.901302,49.206661,0
+            -122.898814,49.206048,0
+            -122.893066,49.204596,0
+            -122.887934,49.203497,0
+            -122.886772,49.203346,0
+            -122.885157,49.203313,0
+            -122.881866,49.203553,0
+            -122.878785,49.203879,0
+            -122.877384,49.204082,0
+            -122.873382,49.204554,0
+            -122.870711,49.204886,0
+            -122.869873,49.205036,0
+            -122.868822,49.2053,0
+            -122.862395,49.206936,0
+            -122.861663,49.20706,0
+            -122.860483,49.207137,0
+            -122.859526,49.20711,0
+            -122.858773,49.206994,0
+            -122.857438,49.2066,0
+            -122.85661,49.206165,0
+            -122.853528,49.204141,0
+            -122.851918,49.203056,0
+            -122.851338,49.202617,0
+            -122.850927,49.202107,0
+            -122.850724,49.201745,0
+            -122.850622,49.200968,0
+            -122.850624,49.200092,0
+            -122.8506,49.198071,0
+            -122.850636,49.196482,0
+            -122.850675,49.195055,0
+            -122.850674,49.195039,0
+            -122.850507,49.194411,0
+            -122.85015,49.193958,0
+            -122.849695,49.193524,0
+            -122.8485,49.192438,0
+            -122.848129,49.192051,0
+            -122.847855,49.191519,0
+            -122.847792,49.190451,0
+            -122.847882,49.188983,0
+            -122.847828,49.188613,0
+            -122.847617,49.188093,0
+            -122.847588,49.188065,0
+            -122.847216,49.187511,0
+            -122.847011,49.187024,0
+            -122.847033,49.186515,0
+            -122.847032,49.186511,0
+            -122.847034,49.185554,0
+            -122.847075,49.184626,0
+            -122.846971,49.18416,0
+            -122.84697,49.184155,0
+            -122.846821,49.183883,0
+            -122.846628,49.183683,0
+            -122.846164,49.183384,0
+            -122.845654,49.183191,0
+            -122.844547,49.182703,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>Expo Line</name>
+        <styleUrl>#line-1B62A6-3000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -122.902211,49.206636,0
+            -122.900549,49.207728,0
+            -122.898761,49.209107,0
+            -122.897151,49.210494,0
+            -122.895393,49.212531,0
+            -122.894336,49.214295,0
+            -122.893523,49.216156,0
+            -122.892748,49.219025,0
+            -122.892439,49.220356,0
+            -122.892207,49.221677,0
+            -122.89177,49.22258,0
+            -122.89123,49.223134,0
+            -122.889827,49.22442,0
+            -122.88878,49.225229,0
+            -122.884594,49.228712,0
+            -122.883614,49.229421,0
+            -122.883027,49.230046,0
+            -122.882684,49.230625,0
+            -122.882429,49.231146,0
+            -122.882403,49.231776,0
+            -122.882519,49.232675,0
+            -122.883056,49.234987,0
+            -122.883819,49.236264,0
+            -122.884644,49.237103,0
+            -122.890764,49.240571,0
+            -122.891833,49.241305,0
+            -122.892447,49.241818,0
+            -122.892612,49.242279,0
+            -122.892719,49.242857,0
+            -122.892824,49.243611,0
+            -122.892933,49.244575,0
+            -122.8935,49.245574,0
+            -122.894553,49.246316,0
+            -122.895918,49.246928,0
+            -122.8979994,49.2482231,0
+            -122.9010404,49.249722,0
+            -122.903723,49.2505888,0
+            -122.907296,49.2511138,0
+            -122.9182054,49.2528914,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Expo Line Stations</name>
+      <Placemark>
+        <name>Braid Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.882861,49.2334,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sapperton Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.88942,49.224837,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Main Street–Science World Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.100048,49.273145,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Stadium–Chinatown Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.109102,49.279226,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Commercial–Broadway Station</name>
+        <description><![CDATA[Expo Line on Platforms 3 & 4<br> Millennium Line on Platforms 1 & 2]]></description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.069249,49.262658,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Columbia Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.906094,49.204854,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Scott Road Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.874186,49.204485,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gateway Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.850659,49.199058,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Surrey Central Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.847897,49.189648,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>New Westminster Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.913515,49.201047,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>King George Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.844742,49.182862,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>22nd Street Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.948892,49.200072,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Edmonds Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.959266,49.21223,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Royal Oak Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -122.988396,49.220118,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Metrotown Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.003611,49.225697,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Patterson Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.012619,49.229778,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Joyce–Collingwood Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.031773,49.238452,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>29th Ave Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.046186,49.244312,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Nanaimo Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.055797,49.248302,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burrard Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.1195863,49.2853021,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Granville Station</name>
+        <description>Expo Line</description>
+        <styleUrl>#icon-1716-01579B</styleUrl>
+        <Point>
+          <coordinates>
+            -123.1161375,49.2832725,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Millennium Line</name>
+      <Placemark>
+        <name>Millennium Line</name>
+        <styleUrl>#line-FFD600-3000-nodesc</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -122.79152,49.285843,0
+            -122.792781,49.284443,0
+            -122.793302,49.283334,0
+            -122.793539,49.28228,0
+            -122.793671,49.281241,0
+            -122.793864,49.280562,0
+            -122.798803,49.27483,0
+            -122.79902,49.274639,0
+            -122.799297,49.274506,0
+            -122.799627,49.274486,0
+            -122.799999,49.274563,0
+            -122.800465,49.27474,0
+            -122.801848,49.275291,0
+            -122.803823,49.275965,0
+            -122.805035,49.276172,0
+            -122.806991,49.276396,0
+            -122.811466,49.276469,0
+            -122.816627,49.276586,0
+            -122.821084,49.27667,0
+            -122.823585,49.276733,0
+            -122.825943,49.276848,0
+            -122.826789,49.277012,0
+            -122.82761,49.277203,0
+            -122.82763,49.277215,0
+            -122.828743,49.277397,0
+            -122.830592,49.277601,0
+            -122.83265,49.277849,0
+            -122.834962,49.277963,0
+            -122.840397,49.278089,0
+            -122.845102,49.278134,0
+            -122.849845,49.278116,0
+            -122.853825,49.277898,0
+            -122.857398,49.277943,0
+            -122.859945,49.278422,0
+            -122.864376,49.279029,0
+            -122.867893,49.279417,0
+            -122.869598,49.279384,0
+            -122.870935,49.278996,0
+            -122.871985,49.278257,0
+            -122.874517,49.274982,0
+            -122.876654,49.272268,0
+            -122.882379,49.267968,0
+            -122.886133,49.265104,0
+            -122.888444,49.263302,0
+            -122.889116,49.262033,0
+            -122.890295,49.261102,0
+            -122.892452,49.259365,0
+            -122.893107,49.258536,0
+            -122.893072,49.257692,0
+            -122.892965,49.255085,0
+            -122.892899,49.2481,0
+            -122.892999,49.247653,0
+            -122.89333,49.247384,0
+            -122.893823,49.247273,0
+            -122.894264,49.247296,0
+            -122.894785,49.247442,0
+            -122.897638,49.249029,0
+            -122.898128,49.249212,0
+            -122.898641,49.249383,0
+            -122.899271,49.249583,0
+            -122.900282,49.250025,0
+            -122.901082,49.250378,0
+            -122.901928,49.250676,0
+            -122.902725,49.250902,0
+            -122.903698,49.25114,0
+            -122.904741,49.251299,0
+            -122.906113,49.251505,0
+            -122.906728,49.251623,0
+            -122.907746,49.251817,0
+            -122.908772,49.252055,0
+            -122.909439,49.252187,0
+            -122.910305,49.252295,0
+            -122.91219,49.252565,0
+            -122.913058,49.252701,0
+            -122.916386,49.253183,0
+            -122.918683,49.253551,0
+            -122.919456,49.253644,0
+            -122.920304,49.25371,0
+            -122.920927,49.253763,0
+            -122.922797,49.25401,0
+            -122.924912,49.254293,0
+            -122.925481,49.254358,0
+            -122.92607,49.254399,0
+            -122.926725,49.254403,0
+            -122.92738,49.254406,0
+            -122.929771,49.254404,0
+            -122.933578,49.254397,0
+            -122.937201,49.254483,0
+            -122.937593,49.254505,0
+            -122.93803,49.254554,0
+            -122.938891,49.25463,0
+            -122.940754,49.254798,0
+            -122.941414,49.25487,0
+            -122.941842,49.254925,0
+            -122.942304,49.255022,0
+            -122.942849,49.255174,0
+            -122.944163,49.255613,0
+            -122.94936,49.25733,0
+            -122.952206,49.258212,0
+            -122.952664,49.258328,0
+            -122.95331,49.258461,0
+            -122.953778,49.25853,0
+            -122.954273,49.258564,0
+            -122.95488,49.258568,0
+            -122.955821,49.258567,0
+            -122.957106,49.258576,0
+            -122.957838,49.258615,0
+            -122.958805,49.258692,0
+            -122.960913,49.258909,0
+            -122.963296,49.259118,0
+            -122.964859,49.25927,0
+            -122.965287,49.259336,0
+            -122.96586,49.259463,0
+            -122.966475,49.259674,0
+            -122.967483,49.260135,0
+            -122.968119,49.260422,0
+            -122.969769,49.261003,0
+            -122.971459,49.26161,0
+            -122.972018,49.261825,0
+            -122.974538,49.262832,0
+            -122.975588,49.263197,0
+            -122.976161,49.263395,0
+            -122.977799,49.263977,0
+            -122.978391,49.264188,0
+            -122.97893,49.264357,0
+            -122.979505,49.264502,0
+            -122.97997,49.264573,0
+            -122.980582,49.264635,0
+            -122.981127,49.264675,0
+            -122.983487,49.264864,0
+            -122.983956,49.264883,0
+            -122.985798,49.264904,0
+            -122.988151,49.2649,0
+            -122.98978,49.264888,0
+            -122.991334,49.264919,0
+            -122.992388,49.265021,0
+            -122.993487,49.265303,0
+            -122.994599,49.265639,0
+            -122.995751,49.265984,0
+            -122.997083,49.26621,0
+            -122.998494,49.266341,0
+            -123.000069,49.266355,0
+            -123.004774,49.266493,0
+            -123.007498,49.266496,0
+            -123.008912,49.266448,0
+            -123.009617,49.266392,0
+            -123.009663,49.266393,0
+            -123.010601,49.266323,0
+            -123.011043,49.266262,0
+            -123.011505,49.266132,0
+            -123.0123,49.265752,0
+            -123.012812,49.2654,0
+            -123.014282,49.264512,0
+            -123.014572,49.264295,0
+            -123.01487,49.263846,0
+            -123.015113,49.263286,0
+            -123.015439,49.262865,0
+            -123.016127,49.262527,0
+            -123.016818,49.262385,0
+            -123.018135,49.262356,0
+            -123.023284,49.262428,0
+            -123.025327,49.262484,0
+            -123.026312,49.262474,0
+            -123.027173,49.262417,0
+            -123.028008,49.262258,0
+            -123.03128,49.261276,0
+            -123.032513,49.26093,0
+            -123.034351,49.260362,0
+            -123.035295,49.260213,0
+            -123.051328,49.258106,0
+            -123.05257,49.257946,0
+            -123.053397,49.257878,0
+            -123.054087,49.257878,0
+            -123.054841,49.257914,0
+            -123.055816,49.258021,0
+            -123.056509,49.258174,0
+            -123.057504,49.258517,0
+            -123.068,49.262808,0
+            -123.070074,49.263444,0
+            -123.071272,49.263726,0
+            -123.073586,49.264462,0
+            -123.076733,49.265426,0
+            -123.077922,49.265647,0
+            -123.079139,49.26587,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+    </Folder>
+    <Folder>
+      <name>Millennium Line Stations</name>
+      <Placemark>
+        <name>Lougheed Town Centre Station</name>
+        <description>Millennium Line and Expo Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.897197,49.248733,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Production Way–University Station</name>
+        <description>Millennium Line and Expo Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.918206,49.253486,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lake City Way Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.939134,49.254659,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Gilmore Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.013514,49.265035,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sperling–Burnaby Lake Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.964208,49.259261,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Brentwood Town Centre Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.001662,49.266481,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Holdom Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.982375,49.264825,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>VCC–Clark Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.07905,49.265929,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Commercial–Broadway Station</name>
+        <description><![CDATA[Millennium Line on Platforms 1 & 2<br>Expo Line on Platforms 3 & 4]]></description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.068615,49.263025,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Renfrew Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.045244,49.258977,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Rupert Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -123.032788,49.260831,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Burquitlam Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.889949,49.261373,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Moody Centre Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.84652,49.277973,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Inlet Centre Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.827354,49.277065,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Coquitlam Central Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.800721,49.274798,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lafarge Lake–Douglas Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.791501,49.285852,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lincoln Station</name>
+        <description>Millennium Line</description>
+        <styleUrl>#icon-1716-FBC02D</styleUrl>
+        <Point>
+          <coordinates>
+            -122.794233,49.280187,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
